@@ -15,6 +15,9 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+Route::view('contact', 'pages.contact');
+Route::view('about', 'pages.about');
+Route::view('customers', 'pages.customers');
 Auth::routes();
 
 Route::get('/dashboard', 'DashboardController@index');

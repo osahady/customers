@@ -20,6 +20,7 @@
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
 </head>
 <body>
+<div class="container">
     <div id="app">
         
         @include('inc.nav')
@@ -27,5 +28,6 @@
             @yield('content')
         </main>
     </div>
+</div>
 </body>
 </html>
