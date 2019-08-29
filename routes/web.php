@@ -17,7 +17,10 @@ Route::get('/', function () {
 
 Route::view('contact', 'pages.contact');
 Route::view('about', 'pages.about');
-Route::view('customers', 'pages.customers');
+//Route::view('customers', 'pages.customers');
+Route::get('customers', 'CustomersController@list');
+Route::post('customers', 'CustomersController@store');
+
 Auth::routes();
 
 Route::get('/dashboard', 'DashboardController@index');
