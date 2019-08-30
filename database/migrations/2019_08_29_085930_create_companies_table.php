@@ -18,6 +18,9 @@ class CreateCompaniesTable extends Migration
             $table->string('name');
             $table->string('phone');
             $table->timestamps();
+
+            $table->unsignedBigInteger('customer_id');
+            $table->foreign('customer_id')->references('id')->on('customers'); 
            
         });
     }
