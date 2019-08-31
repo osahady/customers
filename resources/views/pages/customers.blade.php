@@ -11,7 +11,7 @@
     <div class="row">
         <div class="col-12">
             <form action="customers" method="POST">
-                
+                @csrf
                 <div class="form-group"><label for="name">Name</label><input name="name" type="text" value="{{old('name')}} " class="form-control"><div>{{$errors->first('name')}}</div></div>
                 <div class="form-group"><label for="email">Email</label><input name="email" type="text" value="{{old('email')}} " class="form-control"><div>{{$errors->first('email')}} </div></div>
                 <div class="form-goup">
@@ -33,7 +33,7 @@
                     </select>
                 </div>
                <button type="submit" class="btn btn-primary">Submit</button>
-               @csrf
+               
             </form>
         </div>
     </div>
@@ -44,13 +44,13 @@
         <div class="col-6">
             <h3>Active Customers</h3>
             @foreach ($activeCustomers as $c)
-                <p> {{$c->name}} </p>
+                <p> {{$c->name}} <span class="text-muted">   ({{$c->company->name}})</span>  </p>
             @endforeach    
         </div>
         <div class="col-6">
             <h3>Inactive Customers</h3>
             @foreach ($inactiveCustomers as $c)
-                <p> {{$c->name}} </p>
+               <p> {{$c->name}} <span class="text-muted">({{$c->company->name}})</span>  </p>
             @endforeach    
         </div>
         

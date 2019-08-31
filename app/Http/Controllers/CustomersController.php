@@ -23,7 +23,8 @@ class CustomersController extends Controller
         $data = request()->validate([
             'name' => 'required',
             'email' => 'required|email',
-            'active' => 'required'
+            'active' => 'required',
+            'company_id' => 'required'
         ]);
         
          Customer::create($data);

@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateCompaniesTable extends Migration
+class Companies extends Migration
 {
     /**
      * Run the migrations.
@@ -18,9 +18,7 @@ class CreateCompaniesTable extends Migration
             $table->string('name');
             $table->string('phone');
             $table->timestamps();
-
-            $table->unsignedBigInteger('customer_id');
-            $table->foreign('customer_id')->references('id')->on('customers'); 
+ 
            
         });
     }
@@ -32,6 +30,6 @@ class CreateCompaniesTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('companies');
+        //
     }
 }
